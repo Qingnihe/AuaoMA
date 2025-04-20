@@ -1,0 +1,32 @@
+{
+    "model": {
+        "_type": "choice",
+        "_value": [
+            {
+                "_name": "IF",
+                "z1_dim": {"_type":"choice", "_value": [1, 2, 3]},
+                "model_dim": {"_type":"choice", "_value": [100, 200, 400]},
+                "pretrain_lr": {"_type":"choice", "_value": [8e-3, 8e-4]},
+                "train_lr": {"_type":"choice", "_value": [5e-2, 5e-3, 5e-4]},
+                "batch_size": {"_type":"choice", "_value": [50, 100]},
+                "epochs":{"_type":"choice", "_value":[10, 20]} 
+            },
+            {
+                "_name": "Omni",
+                "model_dim": {"_type": "choice", "_value": [200, 400, 600]},
+                "lr": {"_type": "choice", "_value": [1e-3, 1e-4, 1e-5]},
+                "batch_size": {"_type": "choice", "_value": [100, 200, 400]},
+                "epochs": {"_type": "choice", "_value": [10, 20, 30]}
+            },
+            {
+                "_name": "sdfvae",
+                "s_dim": {"_type": "choice", "_value": [4, 8, 12]},
+                "d_dim": {"_type": "choice", "_value": [5, 10, 15]},
+                "model_dim": {"_type": "choice", "_value": [50, 100, 150]},
+                "lr": {"_type": "choice", "_value": [0.001, 0.0001, 0.00001]},
+                "batch_size": {"_type": "choice", "_value": [64, 128]},
+                "epochs": {"_type": "choice", "_value": [10, 30]}
+            }
+        ]
+    }
+}

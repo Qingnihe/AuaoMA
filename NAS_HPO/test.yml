@@ -1,0 +1,18 @@
+#  "application-server-dataset": --dataset1='application-server-dataset' --dataset2='ASD' --data_len=4032 --create_len=1440 --cycel=288
+#  "server-machine-dataset": --dataset1='server-machine-dataset' --dataset2='SMD' --data_len=21600 --create_len=7200 --cycel=1440
+
+experimentName: asd1
+searchSpaceFile: Search_space/search_space2.json
+trialCommand: python test.py --entity=1 --dataset1=application-server-dataset --dataset2=ASD --data_len=4032 --create_len=1440 --cycle=288
+trialGpuNumber: 1
+trialConcurrency: 1
+maxExperimentDuration: 24h
+tuner:
+  codeDirectory: DEI
+  className: DEI.TpeTuner
+  classArgs:
+    optimize_mode: maximize
+trainingService:
+  platform: local
+  useActiveGpu: true
+  gpuIndices: 2
