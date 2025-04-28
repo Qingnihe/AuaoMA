@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import os
-from AuaoMA.cal import *
+from DbAN.cal import *
 
 def run_model(model_name, params, dataset1, dataset2, entity):
     model_dirs = {
@@ -99,11 +99,11 @@ def evaluate_model(model_name, params, dataset1, dataset2, entity, data_len, cre
     f1_test_score, label, test_score, test_score_replace_ano = read_model_results(model_name, setting, dataset1, dataset2, entity, data_len, create_len)
 
     f1 = cal_f1(f1_test_score, label)
-    AuaoMA = float(cal_AuaoMA(dataset2, test_score, test_score_replace_ano, cycle))
+    DbAN = float(cal_DbAN(dataset2, test_score, test_score_replace_ano, cycle))
 
-    print(f"F1 Score: {float(f1):.4f}, AuaoMA: {float(AuaoMA):.4f}")
+    print(f"F1 Score: {float(f1):.4f}, DbAN: {float(DbAN):.4f}")
 
-    return AuaoMA
+    return DbAN
 
 
 def read_model_results(model_name, setting, dataset1, dataset2, entity, data_len, create_len):

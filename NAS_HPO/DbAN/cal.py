@@ -1,8 +1,8 @@
 
 import numpy as np
 import os
-from AuaoMA.f1 import *
-from AuaoMA.utils import *
+from DbAN.f1 import *
+from DbAN.utils import *
 
 bf_search_min = 0
 bf_search_max = 1000
@@ -43,7 +43,7 @@ def cal_f1(test_score, label):
     return f1_formatted
 
 
-def cal_AuaoMA(dataset2, test_score, test_score_replace_ano, cycle):
+def cal_DbAN(dataset2, test_score, test_score_replace_ano, cycle):
     th_high = 95
     th_low = 5
     vae_coeff = 1.5

@@ -22,8 +22,8 @@ def main():
     model_name = params["model"]["_name"]
 
     run_model(model_name, params["model"], args.dataset1, args.dataset2, args.entity)
-    AuaoMA = evaluate_model(model_name, params["model"], args.dataset1, args.dataset2, args.entity, args.data_len, args.create_len, args.cycle)
-    nni.report_final_result(AuaoMA)
+    DbAN = evaluate_model(model_name, params["model"], args.dataset1, args.dataset2, args.entity, args.data_len, args.create_len, args.cycle)
+    nni.report_final_result(DbAN)
 
 if __name__ == "__main__":
     main()
